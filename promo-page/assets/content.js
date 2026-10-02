@@ -37,15 +37,19 @@ window.PROMO = {
         meta2: "双实现",
         meta3: "零依赖"
       },
-      terminal: {
-        title: "zsh — iskill-huggingface-ext",
-        lines: [
-          [{ t: "$ ", c: "p" }, { t: "bash scripts/migrate.sh -n /Volumes/Big/hf-hub", c: "k" }, { t: "   # DryRun 预览", c: "c" }],
-          [{ t: "✓ ", c: "p" }, { t: "(DryRun) 将把 ~/.cache/huggingface/hub 移动到 /Volumes/Big/hf-hub", c: "s" }],
-          [{ t: "$ ", c: "p" }, { t: "pwsh scripts/migrate.ps1 -Target D:\\hf-hub", c: "k" }, { t: "        # Windows", c: "c" }],
-          [{ t: "✓ ", c: "p" }, { t: "已完成（已降级为 Junction 目录连接点，读取无差异）", c: "s" }]
+      chat: {
+        title: "AI Agent · 对话现场",
+        status: "在线",
+        userLabel: "你",
+        agentLabel: "AI",
+        messages: [
+          { role: "user", text: "把 HuggingFace 缓存迁到 /Volumes/Big/hf-hub" },
+          { role: "agent", text: "先 dry-run 给你看将要做什么，确认后搬目录并在原位置建软链；macOS 与 Windows 操作一致。", tag: "预计释放 38 GB" },
+          { role: "user", text: "模型还能正常加载吗？" },
+          { role: "agent", text: "能——原路径是软链，代码一行都不用改。旧目录我不会替你删，确认无误后你自己删。" }
         ]
       },
+
 
       stats: [
         { value: "2 份实现", label: "一套流程两种系统", note: "migrate.sh（macOS/Linux）+ migrate.ps1（Windows）" },
@@ -147,15 +151,19 @@ window.PROMO = {
         meta2: "Two implementations",
         meta3: "Zero deps"
       },
-      terminal: {
-        title: "zsh — iskill-huggingface-ext",
-        lines: [
-          [{ t: "$ ", c: "p" }, { t: "bash scripts/migrate.sh -n /Volumes/Big/hf-hub", c: "k" }, { t: "   # DryRun preview", c: "c" }],
-          [{ t: "✓ ", c: "p" }, { t: "(DryRun) would move ~/.cache/huggingface/hub to /Volumes/Big/hf-hub", c: "s" }],
-          [{ t: "$ ", c: "p" }, { t: "pwsh scripts/migrate.ps1 -Target D:\\hf-hub", c: "k" }, { t: "        # Windows", c: "c" }],
-          [{ t: "✓ ", c: "p" }, { t: "done (fell back to a Junction directory link, reads identically)", c: "s" }]
+      chat: {
+        title: "AI Agent · live session",
+        status: "online",
+        userLabel: "You",
+        agentLabel: "AI",
+        messages: [
+          { role: "user", text: "Move my HuggingFace cache to /Volumes/Big/hf-hub" },
+          { role: "agent", text: "I dry-run first and show you what will happen, then move the directory and symlink the original path. Same flow on macOS and Windows.", tag: "~38 GB to be freed" },
+          { role: "user", text: "Will models still load?" },
+          { role: "agent", text: "Yes — the original path becomes a symlink, so no code changes. I won't delete the old copy for you; do it yourself once you're satisfied." }
         ]
       },
+
 
       stats: [
         { value: "2 impls", label: "one flow, two systems", note: "migrate.sh (macOS/Linux) + migrate.ps1 (Windows)" },
