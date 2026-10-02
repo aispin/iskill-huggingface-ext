@@ -100,13 +100,14 @@ window.PROMO = {
       steps: {
         eyebrow: "上手",
         title: "三步跑起来",
-        sub: "",
+        sub: "命令由 agent 跑，你只说要什么、看结果。",
         items: [
           { title: "交给 AI 装", desc: "把这句话粘进对话框，agent 会自己拉代码、读文档，再告诉你用法。", codeKey: "install" },
-          { title: "先预览（macOS / Linux）", desc: "DryRun 不实际移动，确认目标路径无误。", codeName: "bash", code: "bash scripts/migrate.sh -n /Volumes/Big/hf-hub" },
-          { title: "Windows 指定目标盘", desc: "PowerShell 里跑，同样一步到位。", codeName: "powershell", code: "pwsh scripts/migrate.ps1 -Target D:\\hf-hub" }
+          { title: "说清迁到哪", desc: "目标盘说清就行；它会先 dry-run 给你看将要做什么。", codeName: "prompt", code: "把 HuggingFace 缓存迁到 /Volumes/Big/hf-hub，迁完在原位置建软链。" },
+          { title: "确认空间腾出来了", desc: "迁完你看一眼系统盘容量（原位置已是软链，模型照常加载）；确认无误再自行删旧目录，它不会替你删。" }
         ]
       },
+
 
       faq: {
         eyebrow: "问答",
@@ -209,13 +210,14 @@ window.PROMO = {
       steps: {
         eyebrow: "Get started",
         title: "Up and running in three steps",
-        sub: "",
+        sub: "The agent runs the commands. You say what you want and check the result.",
         items: [
-          { title: "Let your agent install it", desc: "Paste the line into the chat — it clones the repo, reads the docs and tells you how to use it.", codeKey: "install" },
-          { title: "Preview first (macOS / Linux)", desc: "DryRun moves nothing; confirm the target path is right.", codeName: "bash", code: "bash scripts/migrate.sh -n /Volumes/Big/hf-hub" },
-          { title: "Windows: name the drive", desc: "Run it in PowerShell — equally a one-shot.", codeName: "powershell", code: "pwsh scripts/migrate.ps1 -Target D:\\hf-hub" }
+          { title: "Let your agent install it", desc: "Paste the line into the chat — it clones the repo, reads the docs, and tells you how to use it.", codeKey: "install" },
+          { title: "Say where it should go", desc: "Just name the target drive; it dry-runs first and shows you what will happen.", codeName: "prompt", code: "Move my HuggingFace cache to /Volumes/Big/hf-hub and symlink the original location." },
+          { title: "Check the freed space", desc: "Look at your system disk afterwards — the original path is now a symlink and models still load. Deleting the old copy is yours to do; it won't delete for you." }
         ]
       },
+
 
       faq: {
         eyebrow: "FAQ",
