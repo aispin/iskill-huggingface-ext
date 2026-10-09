@@ -33,4 +33,4 @@ pwsh scripts/migrate.ps1 -Target D:\hf-hub   # 直接指定
 - 软链建立后 HuggingFace 仍按原路径读取，无需改任何代码 / 环境变量。
 - 想换位置：先删软链（`rm ~/.cache/huggingface/hub`），再重跑一次即可。
 
-> 依赖同步：本仓库含 iskill 共享真源的 vendored 副本（清单见 `package.json` 的 `iskillDeps`），**不要手改**。使用前请同时安装 iskill-dep-sync：对 agent 说「请帮我安装 Skill：aispin/iskill-dep-sync」；用法见 SKILL.md「依赖同步」节。
+> 依赖同步：本仓库含 iskill 共享真源的 vendored 副本（清单见 `package.json` 的 `iskillDeps`），**不要手改**。使用前请同时安装 iskill-utils：对 agent 说「请帮我安装 Skill：aispin/iskill-utils」；用法见 SKILL.md「依赖同步」节。
